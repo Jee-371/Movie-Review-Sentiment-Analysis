@@ -85,12 +85,14 @@ def load_sentiment_model():
         import pickle
         
         # Check if the model file exists
-        MODEL_PATH = os.path.join(os.path.dirname(__file__), '../../model/best_model.h5')  
-        if os.path.exists(MODEL_PATH):
-            model = load_model(MODEL_PATH)
-        else:
+        model_path =  r'best_model.h5'
+        if not os.path.exists(model_path):
             st.info("Model file 'best_model.h5' not found. Using advanced keyword-based analysis.")
-            model = None
+            return None, None
+        
+        # Load the model
+        else:
+            model = load_model(model_path)
         
         # Try to load tokenizer if it exists
         tokenizer = None
@@ -289,14 +291,7 @@ def main():
     with col1:
         if model is not None:
             st.success("✅ Custom model loaded and ready")
-        else:
-            st.error("❌ Model not loaded - upload 'best_model.h5' to use custom analysis")
-    
-    with col2:
-        if st.button("🔄 Reload Model"):
-            st.cache_resource.clear()
-            st.rerun()
-    
+
     # Sidebar navigation
     st.sidebar.title("Navigation")
     page = st.sidebar.radio(
