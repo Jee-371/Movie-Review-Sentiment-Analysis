@@ -499,7 +499,16 @@ def display_results(results, min_confidence):
     
     with col4:
         recommendation = "👍 RECOMMENDED" if positive_pct > 60 else "👎 NOT RECOMMENDED" if negative_pct > 60 else "🤔 DEPENDS ON TASTE"
-        st.metric("Recommendation", recommendation)
+    
+        st.markdown(
+            f"""
+            <div style="text-align:center;">
+                <p style="font-size:14px; margin-bottom:4px;">Recommendation</p>
+                <p style="font-size:20px; font-weight:600;">{recommendation}</p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )   
     
     # Visualizations
     st.markdown("---")
