@@ -38,6 +38,8 @@ Each model uses the following architecture:
 | Model 4 - Bidirectional LSTM | **98.24%**        | **77.07%**     |
 | Model 5 - Bidirectional GRU  | 98.81%            | 75.90%         |
 
+![Model Performance](images/model-perfomance.png)
+
 ✅ **Best Model:** Model 4 (Bidirectional LSTM) was selected for deployment due to its highest test accuracy of **77.07%**.
 
 ---
@@ -55,3 +57,87 @@ Each model uses the following architecture:
 - 🖥️ Responsive and clean Streamlit interface
 
 ---
+## 🖼️ Application Screenshots
+![App Screenshot 1](images/mrsa1.png)
+![App Screenshot 2](images/mrsa2.png)
+![App Screenshot 3](images/mrsa3.png)
+
+## 🎯 Application Link  
+🔗 [Click here to open the Movie Review Sentiment Analysis Web App](https://movie-review-sentiment-analysis-8nx9czmvtsc2xiwgz64pzr.streamlit.app/)
+
+---
+
+## ⚙️ How to Run This Project Locally
+
+Follow the steps below to clone, set up, and run this project on your local machine:
+
+### ✅ Prerequisites
+
+Ensure the following are installed:
+
+- Python 3.8 or higher
+- Git
+- pip (Python package manager)
+- virtualenv (optional but recommended)
+
+---
+
+### 📥 1. Clone the Repository
+
+```bash
+git clone https://github.com/jee-371/movie-review-sentiment-analysis.git
+cd movie-review-sentiment-analysis
+```
+
+---
+
+### 📦 2. Install Dependencies
+
+If you’re using a virtual environment:
+
+```bash
+python -m venv venv
+source venv/bin/activate      # On Windows: venv\Scripts\activate
+```
+
+Now install required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 🚀 3. Run the Streamlit App
+
+```bash
+streamlit run app.py
+```
+
+This will open the app in your browser at `http://localhost:8501`.
+
+---
+
+## 📄 Project Structure
+
+```bash
+.movie-review-sentiment-analysis/
+├── images/
+│   ├── model-perfomance.png
+│   ├── mrsa1.png
+│   ├── mrsa2.png
+│   └── mrsa3.png
+│
+├── model/
+│   └── best_model.h5
+│
+├── scripts/
+│   ├── app/
+│   │   ├── app.py
+│   │   └── scraper_integrated.py
+│   └── training/
+│       └── sentiment-analysis-training.ipynb
+│
+├── README.md
+├── requirements.txt
+```
